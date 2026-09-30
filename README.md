@@ -1,4 +1,5 @@
 # File Detector — Malware Upload Scanner
+![ci](https://github.com/FransLard/file-detector-/actions/workflows/ci.yml/badge.svg)
 Pemindai file saat upload dengan **sistem skor berlapis** untuk meminimalkan false positive
 namun tetap detail (Trojan, Ransomware, Backdoor, Keylogger, Worm, Dropper, dsb).
 
