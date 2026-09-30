@@ -2,6 +2,7 @@ from __future__ import annotations
 import os
 from flask import Flask, request, jsonify, render_template, Response
 from engine.detector import scan_file, MAX_SCAN_BYTES
+from engine import __version__
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = MAX_SCAN_BYTES + 1024 * 1024
 EICAR_STRING = r"X5O!P%@AP[4\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*"
@@ -22,7 +23,7 @@ def health():
         yara_ok = True
     except ImportError:
         yara_ok = False
-    return jsonify({"status": "ok", "pefile": pe_ok, "yara": yara_ok, "max_bytes": MAX_SCAN_BYTES})
+    return jsonify({"status": "ok", "pefile": pe_ok, "yara": yara_ok, "max_bytes": MAX_SCAN_BYTES, "version": __version__})
 
 @app.get("/api/eicar")
 def eicar():
