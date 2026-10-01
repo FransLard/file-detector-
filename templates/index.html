@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>File Detector — Malware Upload Scanner</title>
+<link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+<header>
+  <div class="wrap head">
+    <div>
+      <h1>🛡️ File Detector</h1>
+      <p class="sub">Deteksi malware saat upload — Trojan • Ransomware • Backdoor • Keylogger • Macro • Spoofing</p>
+    </div>
+    <div class="badge" id="health">…</div>
+  </div>
+</header>
+<main class="wrap">
+  <section class="card" id="drop" tabindex="0">
+    <div class="drop-inner">
+      <div class="icon">📁</div>
+      <p><b>Drag & drop file ke sini</b> atau <label class="btn">Pilih file<input id="file" type="file" hidden /></label></p>
+      <p class="hint">Maks 100 MB • dicek: hash, magic/MIME, ekstensi ganda, entropi, signature, PE, reputasi MalwareBazaar • file besar butuh waktu ±1 menit</p>
+      <div class="row">
+        <label class="chk"><input type="checkbox" id="rep" checked /> cek reputasi online</label>
+        <button class="btn ghost" id="eicarBtn">⬇ Unduh file uji EICAR</button>
+        <button class="btn ghost" id="eicarScan">⚡ Scan EICAR langsung</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="card hidden" id="result">
+    <div class="res-head">
+      <div>
+        <h2 id="rFile">—</h2>
+        <p id="rMeta" class="muted">—</p>
+      </div>
+      <div class="score"><span id="rScore">0</span><small>/100</small><em id="rLevel">CLEAN</em></div>
+    </div>
+    <div class="bar"><div id="rBar"></div></div>
+    <p id="rAction" class="action">—</p>
+    <div class="grid">
+      <div><h3>🧬 Hash</h3><pre id="rHash"></pre></div>
+      <div><h3>🔎 Identitas</h3><pre id="rIdent"></pre></div>
+    </div>
+    <h3>📌 Alasan & temuan (<span id="rCount">0</span>)</h3>
+    <table><thead><tr><th>Skor</th><th>Temuan</th><th>Keluarga</th><th>Detail</th></tr></thead>
+    <tbody id="rRows"></tbody></table>
+    <h3>🌐 Reputasi</h3><pre id="rRep"></pre>
+  </section>
+
+  <section class="card how">
+    <h3>Cara vonis bekerja (anti false-positive)</h3>
+    <p>Skor 0–100 dari <b>kombinasi sinyal</b>: ekstensi berbahaya saja hanya +10…15 (tidak langsung vonis).
+    Perlu ≥2 sinyal lintas kategori untuk naik ke HIGH. Threshold:
+    <code>0–19 CLEAN</code> • <code>20–39 LOW</code> • <code>40–69 MEDIUM ⛔blokir</code> •
+    <code>70–84 HIGH</code> • <code>85+ MALICIOUS</code>.</p>
+  </section>
+</main>
+<script src="/static/app.js"></script>
+</body>
+</html>

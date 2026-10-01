@@ -1,0 +1,27 @@
+:root{--bg:#0b1220;--card:#111c33;--line:#24365c;--txt:#e8eefc;--mut:#9fb0d0;--grn:#22c55e;--blu:#38bdf8;--yel:#eab308;--org:#f97316;--red:#ef4444}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font-family:Segoe UI,system-ui,Arial}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+.head{display:flex;justify-content:space-between;align-items:center}
+h1{margin:0}.sub{color:var(--mut);margin:4px 0 0}
+.badge{background:#0e1a30;border:1px solid var(--line);padding:8px 12px;border-radius:10px;font-size:13px;color:var(--mut)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin:14px 0}
+#drop{border-style:dashed;text-align:center;cursor:pointer}
+#drop.over{background:#16294f}
+.icon{font-size:44px}.hint{color:var(--mut);font-size:13px}
+.btn{background:#2563eb;color:#fff;border:0;border-radius:8px;padding:8px 14px;cursor:pointer;font-weight:600}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--txt)}
+.row{display:flex;gap:10px;justify-content:center;align-items:center;margin-top:10px;flex-wrap:wrap}
+.chk{font-size:13px;color:var(--mut)}
+.hidden{display:none}
+.res-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.muted{color:var(--mut)}.score{font-size:34px;font-weight:800;text-align:center}
+.score small{font-size:14px;color:var(--mut)}.score em{display:block;font-size:15px;font-style:normal;padding:3px 10px;border-radius:20px}
+.bar{height:12px;background:#0a1428;border-radius:8px;overflow:hidden;margin:10px 0}
+#rBar{height:100%;width:0;background:var(--grn);transition:width .4s}
+.action{font-weight:700}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}}
+pre{background:#0a1428;padding:12px;border-radius:8px;overflow:auto;font-size:12.5px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th,td{border-bottom:1px solid var(--line);padding:8px;text-align:left;vertical-align:top}
+code{background:#0a1428;padding:2px 6px;border-radius:6px}
