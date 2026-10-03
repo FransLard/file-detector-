@@ -1,6 +1,6 @@
 [project]
 name = "file-detector"
-version = "1.1.0"
+version = "1.1.1"
 description = "Malware file upload detector - layered heuristics + PE + YARA-like + reputation"
 readme = "README.md"
 license = { text = "MIT" }
