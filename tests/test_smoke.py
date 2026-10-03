@@ -28,3 +28,7 @@ def test_score_to_verdict_thresholds():
 def test_extension_utils():
     e = utils.extension_analysis("invoice.pdf.exe")
     assert e["spoofed_double_ext"] is True
+
+def test_cli_module_importable():
+    import engine.cli as cli
+    assert callable(cli.main)
